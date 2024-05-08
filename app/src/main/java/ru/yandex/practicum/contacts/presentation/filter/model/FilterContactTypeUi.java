@@ -2,7 +2,14 @@ package ru.yandex.practicum.contacts.presentation.filter.model;
 
 import androidx.annotation.NonNull;
 
-public class FilterContactTypeUi {
+import ru.yandex.practicum.contacts.presentation.base.ListDiffInterface;
+//Шаг 2 +
+public class FilterContactTypeUi implements ListDiffInterface<FilterContactTypeUi> {
+
+    @Override
+    public boolean theSameAs(FilterContactTypeUi o) {
+        return this.getContactType() == o.getContactType();
+    }
 
     private final FilterContactType contactType;
     private final boolean selected;
