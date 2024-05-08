@@ -4,9 +4,14 @@ import androidx.annotation.NonNull;
 
 import java.util.List;
 
-import ru.yandex.practicum.contacts.model.ContactType;
+import ru.yandex.practicum.contacts.presentation.base.ListDiffInterface;
+//Шаг 2 +
+public class ContactUi implements ListDiffInterface<ContactUi> {
 
-public class ContactUi {
+    @Override
+    public boolean theSameAs(ContactUi o) {
+        return this.hashCode() == o.hashCode();
+    }
 
     private final String name;
     private final String phone;
